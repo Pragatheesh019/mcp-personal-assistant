@@ -1,0 +1,22 @@
+# Sensitive OAuth credentials & Tokens
+credentials.json
+client_secret.json
+token.json
+*.json.secret
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Executables & Archives
+*.exe
+*.zip
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db

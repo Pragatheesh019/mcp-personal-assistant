@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Report - Autonomous AI Personal Assistant using MCP</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 40px;
+            margin: 0 auto;
+            max-width: 900px;
+        }
+        .container {
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        h1 {
+            color: #0f172a;
+            font-size: 28px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+            margin-top: 0;
+        }
+        h2 {
+            color: #1e3a8a;
+            font-size: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 6px;
+            margin-top: 32px;
+        }
+        h3 {
+            color: #334155;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .meta-box {
+            background: #f1f5f9;
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+        .meta-box p {
+            margin: 4px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-weight: 600;
+        }
+        pre {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        code {
+            font-family: "Fira Code", Consolas, Monaco, monospace;
+        }
+        .badge-success {
+            background: #dcfce7;
+            color: #166534;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .step-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 12px 18px;
+            margin: 14px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .print-btn {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            float: right;
+        }
+        .print-btn:hover {
+            background-color: #1d4ed8;
+        }
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; padding: 0; }
+            .print-btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <button class="print-btn" onclick="window.print()">📥 Print / Save as PDF</button>
+    <h1>Autonomous AI Personal Assistant via Model Context Protocol (MCP)</h1>
+    
+    <div class="meta-box">
+        <p><strong>Author:</strong> Pragatheeshwaran</p>
+        <p><strong>Date:</strong> August 31, 2026</p>
+        <p><strong>Status:</strong> <span class="badge-success">Verified Live & Production Ready</span></p>
+        <p><strong>Environment:</strong> Python 3.10, FastMCP v2.1.1, Google Calendar API v3, Claude Desktop Host</p>
+    </div>
+
+    <h2>1. Executive Summary</h2>
+    <p>
+        This project demonstrates a production-grade <strong>Autonomous Multi-Tool AI Agent</strong> using Anthropic's <strong>Model Context Protocol (MCP)</strong>. The system unifies real-world schedule intelligence (Google Calendar) with transactional service actions (Movie Ticketing), while enforcing strict deterministic business rules (OTP constraints) to eliminate unauthorized actions or AI hallucinations.
+    </p>
+
+    <h2>2. System Architecture & Flow</h2>
+    <p>
+        The AI Agent acts as an orchestration brain that queries tools over the standardized MCP Bridge:
+    </p>
+    <div class="step-box">
+        <strong>User Prompt</strong> ➡️ <strong>Claude Desktop (Reasoning Host)</strong> ➡️ <strong>MCP Bridge</strong> ➡️ <strong>Calendar Tool + Booking Engine</strong> ➡️ <strong>Rule Engine (OTP Check)</strong> ➡️ <strong>Execution</strong>
+    </div>
+
+    <h2>3. Core Architectural Concepts Mapped</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Theoretical Concept</th>
+                <th>System Component</th>
+                <th>Real Project Implementation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Model</strong></td>
+                <td>Claude 3.5 Sonnet</td>
+                <td>Neural network reasoning engine that parses user intents and decides tool call order.</td>
+            </tr>
+            <tr>
+                <td><strong>Agent</strong></td>
+                <td>Autonomous Orchestrator</td>
+                <td>Determines workflow: Check schedule ➡️ Find conflicts ➡️ Search theater ➡️ Request OTP ➡️ Book.</td>
+            </tr>
+            <tr>
+                <td><strong>Tools / Skills</strong></td>
+                <td>FastMCP Python Server</td>
+                <td>Modular handlers: <code>check_google_calendar</code>, <code>search_theaters</code>, <code>check_shows</code>, <code>book_ticket</code>.</td>
+            </tr>
+            <tr>
+                <td><strong>Rules & Guardrails</strong></td>
+                <td>Deterministic Code Logic</td>
+                <td>Strict OTP requirement: Rejects execution if OTP is absent, preventing accidental booking.</td>
+            </tr>
+            <tr>
+                <td><strong>Context</strong></td>
+                <td>Live Runtime Data</td>
+                <td>Live Google Calendar events (busy at 2:00 PM & 5:45 PM) + Target city parameters.</td>
+            </tr>
+            <tr>
+                <td><strong>Session</strong></td>
+                <td>Multi-turn Lifecycle</td>
+                <td>Conversational state in Claude Desktop managing interaction from greeting to confirmation.</td>
+            </tr>
+            <tr>
+                <td><strong>Memory</strong></td>
+                <td>State Persistence</td>
+                <td>OAuth <code>token.json</code> persistence, eliminating repeated login prompts.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>4. Live Execution & Verification Log</h2>
+    
+    <div class="step-box">
+        <strong>Step 1: User Natural Language Request</strong><br>
+        <em>"Check my Google Calendar to see my schedule for today, and suggest movie timings for Leo in Chennai."</em>
+    </div>
+
+    <div class="step-box">
+        <strong>Step 2: Autonomous Tool 1 Execution (Live Google API)</strong><br>
+        • Live Calendar Events Retrieved: <code>Leo Movie Discussion (2:00 PM - 3:00 PM)</code> and <code>Leo Movie Discussion (5:45 PM - 9:45 PM)</code>.
+    </div>
+
+    <div class="step-box">
+        <strong>Step 3: Autonomous Tool 2 Execution & Conflict Resolution</strong><br>
+        • AI searches venues in Chennai (PVR, INOX, Sathyam).<br>
+        • <strong>Agent Reasoning:</strong> Identifies schedule clashes with 2 PM and 5:45 PM slots. Recommends INOX Night Show.
+    </div>
+
+    <div class="step-box">
+        <strong>Step 4: Guardrail Enforcement & Final Confirmation</strong><br>
+        • User approves booking ➡️ AI calls <code>book_ticket()</code>.<br>
+        • Server intercepts missing OTP: <code>❌ Rule Error: OTP Required</code>.<br>
+        • AI requests OTP from user ➡️ User provides <code>"1234"</code> ➡️ <strong>Result:</strong> <span class="badge-success">✅ Booked — Leo, night show, INOX!</span>
+    </div>
+
+    <h2>5. Key Business Value & ROI</h2>
+    <ul>
+        <li><strong>Unified Workflow:</strong> Replaces 3 disconnected applications with a single intelligent conversational agent.</li>
+        <li><strong>Conflict Prevention:</strong> Zero accidental double-bookings through proactive calendar analysis.</li>
+        <li><strong>Enterprise Safety:</strong> Deterministic code-level guardrails prevent financial/transactional hallucinations.</li>
+        <li><strong>Universal Compatibility:</strong> Built on open MCP standards, allowing zero-friction deployment to Claude Desktop, Cursor, or custom enterprise web agents.</li>
+    </ul>
+
+    <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 30px 0;">
+    <p style="text-align: center; color: #64748b; font-size: 13px;">
+        Project Completed & Documented by <strong>Pragatheeshwaran</strong> | August 31, 2026
+    </p>
+</div>
+
+</body>
+</html>

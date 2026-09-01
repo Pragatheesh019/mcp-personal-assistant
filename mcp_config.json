@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "google-calendar-server": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-google-calendar"
+      ]
+    },
+    "bookmyshow-server": {
+      "command": "python",
+      "args": [
+        "bms_server.py"
+      ]
+    }
+  }
+}
