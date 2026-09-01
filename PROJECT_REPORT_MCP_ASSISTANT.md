@@ -124,6 +124,9 @@ def book_ticket(movie: str, theater: str, otp: str = "") -> str:
 ## 5. Live Execution & Verification Log
 
 ### Test Scenario: Autonomous Schedule Analysis & Booking
+
+*(See screenshots below for actual Claude Desktop interaction)*
+
 1. **User Prompt:**  
    > *"Check my Google Calendar to see my schedule for today, and suggest movie timings for Leo in Chennai."*
 
@@ -141,12 +144,16 @@ def book_ticket(movie: str, theater: str, otp: str = "") -> str:
    * AI identifies scheduling clashes with the 2:00 PM and 5:45 PM calendar blocks.  
    * **AI Response:** *"Given your two calendar blocks, a night show at INOX fits cleanest without clashing. Shall I proceed?"*
 
+![Claude Desktop Calendar Analysis](assets/claude_calendar_check.png)
+
 5. **Security Rule Verification:**  
    * User requests booking: *"Okay, book the night show at INOX for Leo."*  
    * AI triggers `book_ticket()` without OTP $\to$ Backend Rule triggers: `❌ Rule Error: OTP required`.  
    * AI pauses and asks: *"Please provide your 4-digit OTP to complete booking."*  
    * User provides OTP: `"1234"` $\to$ AI re-executes with OTP.  
    * **Final Confirmation:** `✅ Success: Ticket successfully booked for 'Leo' at INOX. Enjoy the movie! 🎬`
+
+![Claude Desktop OTP & Booking](assets/claude_booking_otp.png)
 
 ---
 
